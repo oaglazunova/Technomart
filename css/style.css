@@ -524,26 +524,25 @@ body {
   background: url("../img/flag_new.png") no-repeat 0 0;
 }
 
-.slider {
+.slider-wrapper {
   width: 620px;
-  height: 266px;
   float: left;
   position: relative;
-  color: #ffffff;
+  color: #fff;
+  overflow: hidden;
+}
+
+.slider {
+  height: 266px;
+  padding: 0;
+  position: relative;
 }
 
 .slider__slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.slider__drill {
-  background: url('../img/slide01.jpg');
-}
-
-.slider__perforator {
-  background: url('../img/slide02.jpg');
+  max-width: 100%;
+  float: left;
+  list-style: none;
+  z-index: 1;
 }
 
 .slider__paginator {
@@ -572,22 +571,6 @@ body {
   background: #EE3643;
 }
 
-.slider-text--big {
-  font-size: 36px;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 0.833;
-  margin: 20px 0 10px 20px;
-  display: block;
-}
-
-.slider-text--small {
-  font-size: 18px;
-  line-height: 1.333;
-  display: block;
-  margin: 0 0 120px 20px;
-}
-
 .forward,
 .back {
   position: absolute;
@@ -598,6 +581,7 @@ body {
   width: 20px;
   height: 36px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .forward {
@@ -618,6 +602,14 @@ body {
   padding: 10px 0;
 }
 
+.btn--catalog {
+  display: inline-block;
+  padding: 10px 40px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
 .btn:hover {
   background: #ca2c37;
 }
@@ -634,11 +626,11 @@ body {
 }
 
 .slider__slide {
-  display: none;
+  // display: none;
 }
 
 .slider__slide:nth-child(1) {
-  display: block;
+  // display: block;
 }
 
 .section-header {
@@ -1946,34 +1938,80 @@ body {
 }
 
 @-webkit-keyframes login-open {
-    0%   { -webkit-transform: translateY(-2000px); }
-    70%  { -webkit-transform: translateY(30px);    }
-    90%  { -webkit-transform: translateY(-10px);   }
-    100% { -webkit-transform: translateY(0);       }
+  0% {
+    -webkit-transform: translateY(-2000px);
+  }
+  70% {
+    -webkit-transform: translateY(30px);
+  }
+  90% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
 }
+
 @keyframes login-open {
-    0%   { transform: translateY(-2000px); }
-    70%  { transform: translateY(30px);    }
-    90%  { transform: translateY(-10px);   }
-    100% { transform: translateY(0);       }
+  0% {
+    transform: translateY(-2000px);
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
+
 @-webkit-keyframes login-error {
-    0%, 100%                { -webkit-transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); }
-    20%, 40%, 60%, 80%      { -webkit-transform: translateX(10px); }
+  0%, 100% {
+    -webkit-transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(10px);
+  }
 }
+
 @keyframes login-error {
-    0%, 100%                { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-    20%, 40%, 60%, 80%      { transform: translateX(10px); }
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }
 
 .login-popup-show {
-    display: block;
-    -webkit-animation: login-open 0.4s;
-    animation: login-open 0.4s;
+  display: block;
+  -webkit-animation: login-open 0.4s;
+  animation: login-open 0.4s;
 }
+
 .login-popup-error {
-    -webkit-animation: login-error 0.6s;
-    animation: login-error 0.6s;
+  -webkit-animation: login-error 0.6s;
+  animation: login-error 0.6s;
 }
