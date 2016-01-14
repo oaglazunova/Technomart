@@ -2015,3 +2015,10 @@ body {
   -webkit-animation: login-error 0.6s;
   animation: login-error 0.6s;
 }
+
+.hidden {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
